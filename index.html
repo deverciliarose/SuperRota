@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+    <link rel="stylesheet" href="style.css">
+    <title>SuperRota</title>
+    
+</head>
+<body>
+    <header>
+        <h1>SuperRota</h1>
+        <p>Te transportando com rapidez e segurança</p>
+    </header>
+    <main>
+    <section>
+        <div id="map"></div>
+        <form class="inputRota">
+            <div class="input-group">
+                <label for="origem">Origem:</label>
+                <input type="text" name="origem" id="origem" placeholder="Digite o local de partida" required>
+            </div>
+            <div class="input-group">
+                <label for="destino">Destino:</label>
+                <input type="text" name="destino" id="destino" placeholder="Digite o destino final" required>
+            </div>
+
+            <button type="submit" class="btn">Calcular Corrida</button>
+    </form>
+    </section>
+    <section class="tipo-veiculo">
+        <label>
+            <input type="radio" name="veiculo" value="carro" checked>
+            Carro
+        </label>
+        <label>
+            <input type="radio" name="veiculo" value="moto">
+            Moto
+        </label>
+    </section>
+    <section class="resultado-hidden">
+        <div class="card">
+            <h3>Distânca</h3>
+            <p id="distancia">--Km</p>
+        </div>
+        <div class="card">
+            <h3>Tempo Estimado</h3>
+            <p id="tempo">--min</p>
+        </div>
+        <div class="card-destaque">
+            <h3>Preço</h3>
+            <p id="preco">R$ --</p>
+        </div>
+    </section>
+    <section class="status">
+        <p class="mensagemStatus">Procurando motorista...</p>
+        <div class="loader"></div>
+    </section>
+    </main>    
+    
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+    
+</body>
+</html>
