@@ -106,13 +106,16 @@ document.getElementById('preco').textContent = `R${preco.toFixed(2)}`
 
     map.fitBounds(bounds)
 
-    const Status = document.querySelector('.status');
-
-    const mensagem = document.querySelector('.mensagemStatus');
-
-    const loader = document.querySelector('.loader');
     
-    Status.style.display = "block";
+    
+});
+const Status = document.querySelector('.status');
+const mensagem = document.querySelector('.mensagemStatus');
+const loader = document.querySelector('.loader');
+const btnVeiculo = document.querySelector('.btn-veiculo');
+
+btnVeiculo.addEventListener('click', () => {
+    Status.style.display = "flex";
     mensagem.textContent = 'Procurando Motorista...';
 
     loader.style.display = "block";
@@ -122,5 +125,5 @@ document.getElementById('preco').textContent = `R${preco.toFixed(2)}`
         loader.style.display = 'none'
     }, 10000)
 
-});
+})
 

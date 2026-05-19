@@ -4,59 +4,136 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
     <link rel="stylesheet" href="style.css">
     <title>SuperRota</title>
     
 </head>
 <body>
-    <header>
-        <h1>SuperRota</h1>
-        <p>Te transportando com rapidez e segurança</p>
+    <header class="hero">
+        <div class="hero-content">
+            <div class="hero-image">
+                <img src="img/logo-super-rota.png" alt="logo">
+            </div>
+            <div class="hero-text">
+                <h1>SuperRota</h1>
+            </div>
+            <div class="tagline">
+            <p class="frase">
+                <span class="material-symbols-outlined">
+                    location_on
+                    </span>
+                 Sua rota,
+                <span>nosso compromisso.</span>
+            </p>
+            <p class="frase2">
+                Chegue bem,
+                <span>Sempre.</span>
+            </p>
+            </div>
+        </div>
+
+        <div class="wave">
+            <svg viewBox="0 0 1440 320" preserveAspectRatio="none">
+               <path 
+                  fill="#ffffff"
+                  d="M0,224L80,208C160,192,320,160,480,170.7C640,181,800,235,960,240C1120,245,1280,203,1360,181.3L1440,160L1440,320L0,320Z">
+               </path>
+            </svg>
+         </div>
+        
     </header>
+   
     <main>
-    <section>
+    <section class="map-section">
         <div id="map"></div>
+    </section> 
+    <div class="dados">  
         <form class="inputRota">
             <div class="input-group">
+                <div class="origem">
+                    <div class="icon-origem"></div>
                 <label for="origem">Origem:</label>
+            </div>
                 <input type="text" name="origem" id="origem" placeholder="Digite o local de partida" required>
             </div>
             <div class="input-group">
+                <div class="destino">
+                    <span class="material-symbols-outlined">
+                        location_on
+                        </span>
                 <label for="destino">Destino:</label>
+            </div>
                 <input type="text" name="destino" id="destino" placeholder="Digite o destino final" required>
             </div>
+            <section class="tipo-veiculo">
+                <label>
+                    <input type="radio" name="veiculo" value="carro" checked>
+                    Carro
+                </label>
+                <label>
+                    <input type="radio" name="veiculo" value="moto">
+                    Moto
+                </label>
+            </section>
 
-            <button type="submit" class="btn">Calcular Corrida</button>
+            <button type="submit" class="btn">
+                <span class="material-symbols-outlined">
+                    calculate
+                    </span>
+                Calcular Corrida
+            </button>
     </form>
-    </section>
-    <section class="tipo-veiculo">
-        <label>
-            <input type="radio" name="veiculo" value="carro" checked>
-            Carro
-        </label>
-        <label>
-            <input type="radio" name="veiculo" value="moto">
-            Moto
-        </label>
-    </section>
+
     <section class="resultado-hidden">
         <div class="card">
+            <div class="cart-name">
+            <span class="material-symbols-outlined">
+                distance
+                </span>
             <h3>Distânca</h3>
+            </div>
             <p id="distancia">--Km</p>
         </div>
         <div class="card">
+            <div class="cart-name">
+            <span class="material-symbols-outlined">
+                schedule
+                </span>
             <h3>Tempo Estimado</h3>
+        </div>
             <p id="tempo">--min</p>
         </div>
-        <div class="card-destaque">
+        <div class="card">
+            <div class="cart-name">
+            <span class="material-symbols-outlined">
+                attach_money
+                </span>
             <h3>Preço</h3>
+        </div>
             <p id="preco">R$ --</p>
         </div>
     </section>
+    <section class="confirmar">
+        <button type="submit" class="btn-veiculo">
+            <span class="material-symbols-outlined icon-veiculo">
+                directions_car
+                </span>
+            Pedir veiculo
+        </button>
+    </section>
     <section class="status">
+        <div class="icon">
+            <span class="material-symbols-outlined">
+                directions_car
+                </span>
+        </div>
+        <div class="dados">
         <p class="mensagemStatus">Procurando motorista...</p>
         <div class="loader"></div>
+    </div>
     </section>
+    </div>
     </main>    
     
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
